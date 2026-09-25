@@ -1,0 +1,212 @@
+# ==========================================================
+#              CODING PRACTICE - 10 PROGRAMS
+#        Basic and Core Concepts of Python & DSA
+# ==========================================================
+
+# 1. Even or Odd
+def even_odd():
+    num = int(input("Enter a number: "))
+
+    if num % 2 == 0:
+        print("Even Number")
+    else:
+        print("Odd Number")
+
+
+# 2. Largest of Three Numbers
+def largest_three():
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    c = int(input("Enter third number: "))
+
+    if a >= b and a >= c:
+        largest = a
+    elif b >= a and b >= c:
+        largest = b
+    else:
+        largest = c
+
+    print("Largest Number:", largest)
+
+
+# 3. Prime Number
+def prime_number():
+    num = int(input("Enter a number: "))
+
+    if num <= 1:
+        print("Not a Prime Number")
+        return
+
+    for i in range(2, num):
+        if num % i == 0:
+            print("Not a Prime Number")
+            return
+
+    print("Prime Number")
+
+
+# 4. Factorial
+def factorial():
+    num = int(input("Enter a number: "))
+
+    fact = 1
+
+    for i in range(1, num + 1):
+        fact = fact * i
+
+    print("Factorial:", fact)
+
+
+# 5. Fibonacci Series
+def fibonacci():
+    n = int(input("Enter number of terms: "))
+
+    a = 0
+    b = 1
+
+    print("Fibonacci Series:")
+
+    for i in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+
+    print()
+
+
+# 6. Reverse a Number
+def reverse_number():
+    num = int(input("Enter a number: "))
+
+    reverse = 0
+
+    while num > 0:
+        digit = num % 10
+        reverse = reverse * 10 + digit
+        num = num // 10
+
+    print("Reversed Number:", reverse)
+
+
+# 7. Palindrome Number
+def palindrome():
+    num = int(input("Enter a number: "))
+
+    original = num
+    reverse = 0
+
+    while num > 0:
+        digit = num % 10
+        reverse = reverse * 10 + digit
+        num = num // 10
+
+    if original == reverse:
+        print("Palindrome Number")
+    else:
+        print("Not a Palindrome Number")
+
+
+# 8. Sum of List Elements
+def list_sum():
+    numbers = [10, 20, 30, 40, 50]
+
+    total = 0
+
+    for num in numbers:
+        total = total + num
+
+    print("List:", numbers)
+    print("Sum:", total)
+
+
+# 9. Largest Element in List
+def largest_list():
+    numbers = [25, 10, 45, 32, 18, 50]
+
+    largest = numbers[0]
+
+    for num in numbers:
+        if num > largest:
+            largest = num
+
+    print("List:", numbers)
+    print("Largest Element:", largest)
+
+
+# 10. Linear Search
+def linear_search():
+    numbers = [10, 25, 30, 45, 50, 65]
+
+    target = int(input("Enter element to search: "))
+
+    found = False
+
+    for i in range(len(numbers)):
+        if numbers[i] == target:
+            print("Element found at index:", i)
+            found = True
+            break
+
+    if not found:
+        print("Element not found")
+
+
+# ==========================================================
+#                       MAIN MENU
+# ==========================================================
+
+while True:
+
+    print("\n================================================")
+    print("          CODING PRACTICE PROGRAM")
+    print("================================================")
+
+    print("1. Even or Odd")
+    print("2. Largest of Three Numbers")
+    print("3. Prime Number")
+    print("4. Factorial")
+    print("5. Fibonacci Series")
+    print("6. Reverse a Number")
+    print("7. Palindrome Number")
+    print("8. Sum of List Elements")
+    print("9. Largest Element in List")
+    print("10. Linear Search")
+    print("11. Exit")
+
+    choice = int(input("\nEnter your choice: "))
+
+    if choice == 1:
+        even_odd()
+
+    elif choice == 2:
+        largest_three()
+
+    elif choice == 3:
+        prime_number()
+
+    elif choice == 4:
+        factorial()
+
+    elif choice == 5:
+        fibonacci()
+
+    elif choice == 6:
+        reverse_number()
+
+    elif choice == 7:
+        palindrome()
+
+    elif choice == 8:
+        list_sum()
+
+    elif choice == 9:
+        largest_list()
+
+    elif choice == 10:
+        linear_search()
+
+    elif choice == 11:
+        print("\nThank you for practicing!")
+        break
+
+    else:
+        print("Invalid choice! Please try again.")
